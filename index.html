@@ -6,86 +6,94 @@
     <title>Maa Katyani Jyotish</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Livvic&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        body { font-family: 'Livvic', sans-serif; }
-        .brand-color-1 { color: #c21e56; }
-        .brand-color-2 { color: #f7cd36; }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
 </head>
-<body class="bg-gray-100">
-    <div class="ticker-bar bg-gray-800 text-white py-2">
-        <p class="text-center">Welcome to Maa Katyani Jyotish - Your Journey to Enlightenment!</p>
+<body class="bg-white text-gray-800 font-Livvic">
+    <!-- Ticker Bar -->
+    <div class="bg-gray-800 text-white p-2 text-center animate-marquee">
+        <marquee behavior="scroll" direction="left">Welcome to Maa Katyani Jyotish - Your Trusted Partner in Astrology!</marquee>
     </div>
 
-    <header class="flex justify-between items-center p-4 bg-white shadow-lg">
+    <!-- Header -->
+    <header class="flex justify-between items-center p-5 bg-white shadow">
         <div class="flex space-x-4">
-            <img src="logo1.png" alt="Logo 1" class="h-10">
-            <img src="logo2.png" alt="Logo 2" class="h-10">
-            <img src="logo3.png" alt="Logo 3" class="h-10">
+            <img src="path/to/logo1.png" alt="Logo 1" class="h-10">
+            <img src="path/to/logo2.png" alt="Logo 2" class="h-10">
+            <img src="path/to/logo3.png" alt="Logo 3" class="h-10">
         </div>
     </header>
 
-    <marquee class="bg-gray-200 text-gray-600 py-2">
-        Stay tuned for our special offers and discounts!
-    </marquee>
-
-    <div class="banners p-4 space-y-4">
-        <img src="banner1.jpg" alt="Banner 1" class="w-full h-40 object-cover">
-        <img src="banner2.jpg" alt="Banner 2" class="w-full h-40 object-cover">
+    <!-- Marquee -->
+    <div class="bg-[#c21e56] text-white text-center py-3">
+        <marquee behavior="scroll" direction="left">Astrology Predictions and Consultations Available Now!</marquee>
     </div>
 
-    <section class="services grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-        <div class="bg-white p-4 shadow rounded">Service 1</div>
-        <div class="bg-white p-4 shadow rounded">Service 2</div>
-        <div class="bg-white p-4 shadow rounded">Service 3</div>
+    <!-- Banners -->
+    <div class="flex space-x-4 p-5">
+        <div class="w-1/3"><img src="path/to/banner1.jpg" alt="Banner 1" class="w-full"></div>
+        <div class="w-1/3"><img src="path/to/banner2.jpg" alt="Banner 2" class="w-full"></div>
+        <div class="w-1/3"><img src="path/to/banner3.jpg" alt="Banner 3" class="w-full"></div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
+        <div class="border rounded-lg p-4 shadow">Service 1</div>
+        <div class="border rounded-lg p-4 shadow">Service 2</div>
+        <div class="border rounded-lg p-4 shadow">Service 3</div>
+        <div class="border rounded-lg p-4 shadow">Service 4</div>
+        <div class="border rounded-lg p-4 shadow">Service 5</div>
+        <div class="border rounded-lg p-4 shadow">Service 6</div>
+    </div>
+
+    <!-- About Section -->
+    <section class="p-5" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-4">About Us</h2>
+        <p>Your reliable source for expert astrology services...</p>
     </section>
 
-    <section class="about bg-white p-4 shadow rounded">
-        <h2 class="font-bold text-xl text-center">About Us</h2>
-        <p class="text-center">We provide the best astrology services.</p>
+    <!-- Popular Services -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-5">
+        <div class="p-4 border border-gray-200 rounded-lg">Popular Service 1</div>
+        <div class="p-4 border border-gray-200 rounded-lg">Popular Service 2</div>
+        <div class="p-4 border border-gray-200 rounded-lg">Popular Service 3</div>
+        <div class="p-4 border border-gray-200 rounded-lg">Popular Service 4</div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <section class="p-5 bg-gray-100">
+        <h3 class="text-2xl font-bold">Why Choose Us?</h3>
+        <div>Your features and contact form will be here...</div>
     </section>
 
-    <section class="popular-services p-4">
-        <h2 class="font-bold text-xl">Popular Services</h2>
-        <ul class="list-disc pl-5">
-            <li>Astrological Readings</li>
-            <li>Counseling</li>
-            <li>Horoscope Matching</li>
-        </ul>
+    <!-- Main Services -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
+        <div class="border p-4">Main Service 1</div>
+        <div class="border p-4">Main Service 2</div>
+        <div class="border p-4">Main Service 3</div>
+    </div>
+
+    <!-- Testimonials -->
+    <section class="p-5">
+        <h3 class="text-2xl font-bold mb-4">What Our Clients Say</h3>
+        <div>Testimonials from clients...</div>
     </section>
 
-    <section class="why-choose-us bg-gray-200 p-4">
-        <h2 class="font-bold text-xl">Why Choose Us?</h2>
-        <p>We have experienced astrologers.</p>
-    </section>
-
-    <section class="main-services grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-        <div class="bg-white p-4 shadow rounded">Main Service 1</div>
-        <div class="bg-white p-4 shadow rounded">Main Service 2</div>
-        <div class="bg-white p-4 shadow rounded">Main Service 3</div>
-    </section>
-
-    <section class="testimonials bg-white p-4 shadow rounded">
-        <h2 class="font-bold text-xl">Testimonials</h2>
-        <p>Our clients love us!</p>
-    </section>
-
-    <footer class="bg-gray-800 text-white text-center p-4">
-        <p>&copy; 2026 Maa Katyani Jyotish</p>
-        <div>
-            <a href="tel:+919867784642" class="text-white">Call Us: +91-9867784642</a>
-            <br>
-            <a href="https://wa.me/+919867784642/?text=Please Help To Me" class="text-white">WhatsApp</a>
-        </div>
+    <!-- Footer -->
+    <footer class="p-5 bg-gray-800 text-white text-center">
+        <p>Contact Us: +91-9867784642 | Email: info@maakatyani.com</p>
     </footer>
 
-    <button class="fixed right-4 bottom-4 bg-gray-800 text-white p-2 rounded-full shadow-lg">
-        <a href="https://wa.me/+919867784642/?text=Please Help To Me">Chat</a>
-    </button>
+    <!-- Floating Call/WhatsApp Buttons -->
+    <a href="tel:+919867784642" class="fixed right-5 bottom-20 p-3 bg-[#d30000] text-white rounded-full">Call</a>
+    <a href="https://wa.me/+919867784642/?text=Please Help To Me" class="fixed right-5 bottom-10 p-3 bg-[#ffab00] text-white rounded-full">WhatsApp</a>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
     <script>
-        AOS.init();
+        $(document).ready(function() {
+            AOS.init();
+        });
     </script>
 </body>
 </html>
