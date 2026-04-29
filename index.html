@@ -1,99 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maa Katyani Jyotish</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Livvic&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maa Katyani Jyotish – Expert astrology consultations for love, marriage, business, and life problems. Call +91-9867784642." />
+  <title>Maa Katyani Jyotish – Astrology Services</title>
+
+  <!-- Brand fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Livvic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Scroll animation base styles (handled by script.js IntersectionObserver) -->
+  <style>
+    [data-aos]{opacity:0;transition-property:opacity,transform;transition-duration:.75s;transition-timing-function:ease-in-out;}
+    [data-aos].aos-animate{opacity:1;transform:none!important;}
+    [data-aos="fade-up"]{transform:translateY(40px);}
+    [data-aos="fade-right"]{transform:translateX(-50px);}
+    [data-aos="fade-left"]{transform:translateX(50px);}
+    [data-aos="zoom-in"]{transform:scale(.85);opacity:0;}
+  </style>
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Site stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-white text-gray-800 font-Livvic">
-    <!-- Ticker Bar -->
-    <div class="bg-gray-800 text-white p-2 text-center animate-marquee">
-        <marquee behavior="scroll" direction="left">Welcome to Maa Katyani Jyotish - Your Trusted Partner in Astrology!</marquee>
-    </div>
+<body>
 
-    <!-- Header -->
-    <header class="flex justify-between items-center p-5 bg-white shadow">
-        <div class="flex space-x-4">
-            <img src="path/to/logo1.png" alt="Logo 1" class="h-10">
-            <img src="path/to/logo2.png" alt="Logo 2" class="h-10">
-            <img src="path/to/logo3.png" alt="Logo 3" class="h-10">
+<!-- ============================================================
+     1. TICKER BAR
+============================================================ -->
+<div class="ticker-bar" role="marquee" aria-label="Announcement">
+  <div class="ticker-inner">
+    <span>⭐ Do You Deal with Challenges Every Day?&nbsp;
+      <a href="tel:+919867784642">Call +91-9867784642</a>
+      &nbsp;|&nbsp; Love Problem Solution &nbsp;|&nbsp; Marriage Problem &nbsp;|&nbsp;
+      Business Problem &nbsp;|&nbsp; Lost Love Back &nbsp;|&nbsp;
+      Husband Wife Problem &nbsp;|&nbsp; Inter-Caste Marriage &nbsp;|&nbsp; ⭐
+    </span>
+  </div>
+</div>
+
+<!-- ============================================================
+     2. HEADER
+============================================================ -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <div class="header-inner">
+      <!-- Logos -->
+      <div class="header-logos">
+        <img src="images/logo1.jpg" alt="Maa Katyani Jyotish logo" loading="lazy" />
+        <img src="images/logo2.png" alt="Maa Katyani Jyotish emblem" loading="lazy" />
+        <img src="images/logo3.png" alt="Maa Katyani Jyotish symbol" loading="lazy" />
+      </div>
+
+      <!-- Brand name (center) -->
+      <div class="header-brand">
+        Maa Katyani Jyotish
+        <span>Expert Astrologer &amp; Spiritual Consultant</span>
+      </div>
+
+      <!-- Desktop navigation -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="tel:+919867784642" class="btn-primary">Call Now</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile navigation drawer -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="tel:+919867784642">📞 Call +91-9867784642</a></li>
+      <li><a href="https://wa.me/+919867784642/?text=Please%20Help%20To%20Me" target="_blank" rel="noopener">💬 WhatsApp Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============================================================
+     3. MARQUEE – Scrolling services
+============================================================ -->
+<div class="marquee-bar" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Love Back Solution</span>
+    <span class="marquee-item"><i class="fa-solid fa-heart"></i> Husband Wife Problem</span>
+    <span class="marquee-item"><i class="fa-solid fa-briefcase"></i> Business Problem</span>
+    <span class="marquee-item"><i class="fa-solid fa-ring"></i> Inter-Caste Marriage</span>
+    <span class="marquee-item"><i class="fa-solid fa-people-arrows"></i> Relation Problems</span>
+    <span class="marquee-item"><i class="fa-solid fa-hands-holding-heart"></i> Marital Problems</span>
+    <span class="marquee-item"><i class="fa-solid fa-phone"></i>
+      <span class="marquee-cta">Call Now: +91-9867784642</span>
+    </span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Love Marriage Specialist</span>
+    <span class="marquee-item"><i class="fa-solid fa-moon"></i> Vashikaran Specialist</span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Love Back Solution</span>
+    <span class="marquee-item"><i class="fa-solid fa-heart"></i> Husband Wife Problem</span>
+    <span class="marquee-item"><i class="fa-solid fa-briefcase"></i> Business Problem</span>
+    <span class="marquee-item"><i class="fa-solid fa-ring"></i> Inter-Caste Marriage</span>
+    <span class="marquee-item"><i class="fa-solid fa-people-arrows"></i> Relation Problems</span>
+    <span class="marquee-item"><i class="fa-solid fa-hands-holding-heart"></i> Marital Problems</span>
+    <span class="marquee-item"><i class="fa-solid fa-phone"></i>
+      <span class="marquee-cta">Call Now: +91-9867784642</span>
+    </span>
+    <span class="marquee-item"><i class="fa-solid fa-star"></i> Love Marriage Specialist</span>
+    <span class="marquee-item"><i class="fa-solid fa-moon"></i> Vashikaran Specialist</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     4. BANNER 1
+============================================================ -->
+<section class="banner-section" aria-label="Banner">
+  <a href="https://wa.me/+919867784642/?text=Please%20Help%20To%20Me" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <img src="images/banner1.png" alt="Maa Katyani Jyotish – Astrology Services Banner" loading="lazy" />
+    <div class="banner-overlay">
+      <span class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</span>
+    </div>
+  </a>
+</section>
+
+<!-- ============================================================
+     5. SERVICES GRID – 6 cards
+============================================================ -->
+<section class="services-section" id="services" aria-labelledby="servicesTitle">
+  <div class="container">
+    <h2 class="section-title" id="servicesTitle" data-aos="fade-up">Our <span>Services</span></h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="80">Trusted solutions for life's most challenging problems</p>
+
+    <div class="services-grid">
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="0">
+        <img data-src="images/o1.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Love Back" loading="lazy" />
+        <h3>Love Back</h3>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="80">
+        <img data-src="images/o2.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Husband Wife Problem" loading="lazy" />
+        <h3>Husband Wife Problem</h3>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="160">
+        <img data-src="images/o3.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Business Problem" loading="lazy" />
+        <h3>Business Problem</h3>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="0">
+        <img data-src="images/o4.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Inter-Caste Marriage" loading="lazy" />
+        <h3>Inter-Caste Marriage</h3>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="80">
+        <img data-src="images/o5.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Relation Problems" loading="lazy" />
+        <h3>Relation Problems</h3>
+      </div>
+      <div class="service-card" data-aos="zoom-in" data-aos-delay="160">
+        <img data-src="images/o6.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Marital Problems" loading="lazy" />
+        <h3>Marital Problems</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6. BANNER 2
+============================================================ -->
+<section class="banner-section" aria-label="Banner 2">
+  <img src="images/banner2.png" alt="Maa Katyani Jyotish Services Banner" loading="lazy" />
+</section>
+
+<!-- ============================================================
+     7. ABOUT SECTION
+============================================================ -->
+<section class="about-section" id="about" aria-labelledby="aboutTitle">
+  <div class="container">
+    <div class="about-inner">
+      <!-- Text -->
+      <div class="about-text" data-aos="fade-right">
+        <h2 id="aboutTitle">About <span>Maa Katyani Jyotish</span></h2>
+        <p>
+          Maa Katyani Jyotish is a renowned spiritual healer and astrology expert with over two decades of experience
+          helping people overcome life's most challenging obstacles. Guided by the blessings of Maa Katyayani,
+          our consultations provide clarity, peace, and powerful spiritual remedies.
+        </p>
+        <p>
+          Whether you are suffering from love problems, family disputes, business losses, or marriage issues,
+          our expert guidance offers proven solutions rooted in Vedic astrology and sacred traditions.
+        </p>
+        <ul>
+          <li>Over 20+ years of experience in Vedic Astrology</li>
+          <li>10,000+ satisfied clients across India and abroad</li>
+          <li>Specialised in love, marriage &amp; relationship solutions</li>
+          <li>Confidential, compassionate, and trusted consultations</li>
+          <li>Available 24/7 – call or WhatsApp anytime</li>
+        </ul>
+        <a href="tel:+919867784642" class="btn-primary">
+          <i class="fa-solid fa-phone"></i>&nbsp; Consult Now: +91-9867784642
+        </a>
+      </div>
+
+      <!-- Rotating ring image -->
+      <div class="about-image-wrap" data-aos="fade-left">
+        <img class="about-ring" src="images/bg2.png" alt="" role="presentation" aria-hidden="true" loading="lazy" />
+        <img class="about-god" src="images/god.png" alt="Maa Katyayani blessing" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     8. POPULAR SERVICES – 4 cards
+============================================================ -->
+<section class="popular-section" aria-labelledby="popularTitle">
+  <div class="container">
+    <h2 class="section-title" id="popularTitle" data-aos="fade-up">Popular <span>Services</span></h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="80">Our most sought-after astrology solutions</p>
+
+    <div class="popular-grid">
+      <div class="popular-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="card-img-wrap">
+          <img data-src="images/z1.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Business Problem Solution" loading="lazy" />
         </div>
-    </header>
-
-    <!-- Marquee -->
-    <div class="bg-[#c21e56] text-white text-center py-3">
-        <marquee behavior="scroll" direction="left">Astrology Predictions and Consultations Available Now!</marquee>
+        <div class="card-body">
+          <h3>Business Problem</h3>
+          <p>Remove obstacles and attract prosperity with powerful business remedies.</p>
+        </div>
+      </div>
+      <div class="popular-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-img-wrap">
+          <img data-src="images/z2.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Lost Love Back" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Lost Love Back</h3>
+          <p>Reunite with your lost love through ancient Vedic love back solutions.</p>
+        </div>
+      </div>
+      <div class="popular-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-img-wrap">
+          <img data-src="images/z3.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Husband Wife Problem" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Husband Wife Problem</h3>
+          <p>Resolve marital conflicts and restore harmony in your relationship.</p>
+        </div>
+      </div>
+      <div class="popular-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-img-wrap">
+          <img data-src="images/z4.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Love Marriage Specialist" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Love Marriage</h3>
+          <p>Get expert guidance and family approval for your love marriage.</p>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Banners -->
-    <div class="flex space-x-4 p-5">
-        <div class="w-1/3"><img src="path/to/banner1.jpg" alt="Banner 1" class="w-full"></div>
-        <div class="w-1/3"><img src="path/to/banner2.jpg" alt="Banner 2" class="w-full"></div>
-        <div class="w-1/3"><img src="path/to/banner3.jpg" alt="Banner 3" class="w-full"></div>
+<!-- ============================================================
+     9. BANNER 3
+============================================================ -->
+<section class="banner-section" aria-label="Banner 3">
+  <img src="images/banner3.png" alt="Maa Katyani Jyotish – Connect With Us Banner" loading="lazy" />
+</section>
+
+<!-- ============================================================
+     10. WHY CHOOSE US
+============================================================ -->
+<section class="why-section" id="why-us" aria-labelledby="whyTitle">
+  <div class="container">
+    <div class="why-inner">
+      <!-- Left content -->
+      <div class="why-text" data-aos="fade-right">
+        <h2 id="whyTitle">Why <span>Choose</span> Us?</h2>
+        <p>
+          For over 20 years, Maa Katyani Jyotish has been a beacon of hope for thousands across India and worldwide.
+          Our approach blends ancient Vedic wisdom with compassionate guidance to deliver real, lasting results.
+        </p>
+        <p>
+          Every consultation is completely confidential, and we tailor solutions specifically to your unique situation.
+          We believe in restoring love, peace, and prosperity to every home we serve.
+        </p>
+
+        <!-- 4 Feature cards -->
+        <div class="why-features">
+          <div class="why-feature" data-aos="zoom-in" data-aos-delay="0">
+            <img data-src="images/i1.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Experience" loading="lazy" />
+            <div>
+              <h4>20+ Years Experience</h4>
+              <p>Trusted by thousands for genuine Vedic astrology guidance.</p>
+            </div>
+          </div>
+          <div class="why-feature" data-aos="zoom-in" data-aos-delay="100">
+            <img data-src="images/i2.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="100% Privacy" loading="lazy" />
+            <div>
+              <h4>100% Confidential</h4>
+              <p>Your personal matters are handled with complete privacy.</p>
+            </div>
+          </div>
+          <div class="why-feature" data-aos="zoom-in" data-aos-delay="200">
+            <img data-src="images/i3.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Fast Results" loading="lazy" />
+            <div>
+              <h4>Fast Results</h4>
+              <p>Most clients see significant improvements within weeks.</p>
+            </div>
+          </div>
+          <div class="why-feature" data-aos="zoom-in" data-aos-delay="300">
+            <img data-src="images/i4.png" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="24/7 Available" loading="lazy" />
+            <div>
+              <h4>24/7 Available</h4>
+              <p>Reach us anytime – call or WhatsApp day or night.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact box -->
+      <div class="contact-box" data-aos="fade-left">
+        <h3>Get Instant Help</h3>
+        <p>Speak to our expert astrologer now for immediate solutions to your problems.</p>
+        <a href="tel:+919867784642" class="phone-num" aria-label="Call us">
+          <i class="fa-solid fa-phone-volume"></i>&nbsp; +91-9867784642
+        </a>
+        <p>or</p>
+        <a href="https://wa.me/+919867784642/?text=Please%20Help%20To%20Me" target="_blank" rel="noopener" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>&nbsp; WhatsApp Us
+        </a>
+        <p style="margin-top:1.2rem;font-size:.82rem;">Available 24 hours &bull; 7 days a week</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Services Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
-        <div class="border rounded-lg p-4 shadow">Service 1</div>
-        <div class="border rounded-lg p-4 shadow">Service 2</div>
-        <div class="border rounded-lg p-4 shadow">Service 3</div>
-        <div class="border rounded-lg p-4 shadow">Service 4</div>
-        <div class="border rounded-lg p-4 shadow">Service 5</div>
-        <div class="border rounded-lg p-4 shadow">Service 6</div>
+<!-- ============================================================
+     11. MAIN SERVICES – 3 cards
+============================================================ -->
+<section class="main-services-section" aria-labelledby="mainServicesTitle">
+  <div class="container">
+    <h2 class="section-title" id="mainServicesTitle" data-aos="fade-up">Expert <span>Solutions</span></h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="80">Specialised spiritual remedies for your biggest challenges</p>
+
+    <div class="main-services-grid">
+      <div class="main-service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="card-img">
+          <img data-src="images/b1.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Marriage Problem Solution" loading="lazy" />
+        </div>
+        <div class="card-content">
+          <h3>Marriage Problem</h3>
+          <p>Overcome obstacles in marriage – family disapproval, delayed marriage, or misunderstandings between partners.</p>
+          <a href="tel:+919867784642" class="btn-primary">Consult Now</a>
+        </div>
+      </div>
+      <div class="main-service-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="card-img">
+          <img data-src="images/b2.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Breakup Problem Solution" loading="lazy" />
+        </div>
+        <div class="card-content">
+          <h3>Breakup Problem</h3>
+          <p>Heal heartbreak and rekindle lost love with proven Vedic astrology and spiritual healing techniques.</p>
+          <a href="tel:+919867784642" class="btn-primary">Consult Now</a>
+        </div>
+      </div>
+      <div class="main-service-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="card-img">
+          <img data-src="images/b3.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Prayer For Love Back" loading="lazy" />
+        </div>
+        <div class="card-content">
+          <h3>Prayer For Love Back</h3>
+          <p>Sacred prayers and rituals performed by our expert to attract your loved one back into your life.</p>
+          <a href="tel:+919867784642" class="btn-primary">Consult Now</a>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- About Section -->
-    <section class="p-5" data-aos="fade-up">
-        <h2 class="text-3xl font-bold mb-4">About Us</h2>
-        <p>Your reliable source for expert astrology services...</p>
-    </section>
+<!-- ============================================================
+     12. TESTIMONIALS
+============================================================ -->
+<section class="testimonials-section" id="testimonials" aria-labelledby="testimonialsTitle">
+  <div class="container">
+    <h2 class="section-title" id="testimonialsTitle" data-aos="fade-up">Happy <span>Clients</span></h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="80">Real stories from people whose lives changed</p>
 
-    <!-- Popular Services -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-5">
-        <div class="p-4 border border-gray-200 rounded-lg">Popular Service 1</div>
-        <div class="p-4 border border-gray-200 rounded-lg">Popular Service 2</div>
-        <div class="p-4 border border-gray-200 rounded-lg">Popular Service 3</div>
-        <div class="p-4 border border-gray-200 rounded-lg">Popular Service 4</div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+        <img class="client-img"
+          data-src="images/happy-client-1-1024x1024-1.png"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          alt="Happy Client 1" loading="lazy" />
+        <div class="stars">★★★★★</div>
+        <blockquote>"After years of struggling with my love life, Maa Katyani Jyotish gave me a solution that truly worked. My partner came back within 3 weeks!"</blockquote>
+        <cite>— Priya Sharma, Mumbai</cite>
+      </div>
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="120">
+        <img class="client-img"
+          data-src="images/happy-client-2-1024x1024-1.png"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          alt="Happy Client 2" loading="lazy" />
+        <div class="stars">★★★★★</div>
+        <blockquote>"My business was failing and I was deeply stressed. The guidance I received was life-changing. My business is now thriving beyond expectations!"</blockquote>
+        <cite>— Rahul Mehta, Delhi</cite>
+      </div>
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="240">
+        <img class="client-img"
+          data-src="images/happy-client-3-1024x1024-1.png"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          alt="Happy Client 3" loading="lazy" />
+        <div class="stars">★★★★★</div>
+        <blockquote>"My husband and I were on the verge of separation. Thanks to the remedies suggested, our marriage is now peaceful and happy again. Truly blessed!"</blockquote>
+        <cite>— Kavita Patel, Ahmedabad</cite>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Why Choose Us Section -->
-    <section class="p-5 bg-gray-100">
-        <h3 class="text-2xl font-bold">Why Choose Us?</h3>
-        <div>Your features and contact form will be here...</div>
-    </section>
+<!-- ============================================================
+     13. FOOTER
+============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Column 1 – Brand & Phone -->
+      <div class="footer-col">
+        <h4>Maa Katyani Jyotish</h4>
+        <p>Your trusted spiritual guide for over 20 years. Expert in Vedic astrology, love back, and life problem solutions.</p>
+        <a href="tel:+919867784642" class="footer-phone" aria-label="Call us">
+          <i class="fa-solid fa-phone"></i> +91-9867784642
+        </a>
+      </div>
 
-    <!-- Main Services -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
-        <div class="border p-4">Main Service 1</div>
-        <div class="border p-4">Main Service 2</div>
-        <div class="border p-4">Main Service 3</div>
+      <!-- Column 2 – Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services"><i class="fa-solid fa-chevron-right" style="font-size:.7rem;color:var(--gold);margin-right:.4rem;"></i>Our Services</a></li>
+          <li><a href="#about"><i class="fa-solid fa-chevron-right" style="font-size:.7rem;color:var(--gold);margin-right:.4rem;"></i>About Us</a></li>
+          <li><a href="#why-us"><i class="fa-solid fa-chevron-right" style="font-size:.7rem;color:var(--gold);margin-right:.4rem;"></i>Why Choose Us</a></li>
+          <li><a href="#testimonials"><i class="fa-solid fa-chevron-right" style="font-size:.7rem;color:var(--gold);margin-right:.4rem;"></i>Testimonials</a></li>
+          <li><a href="tel:+919867784642"><i class="fa-solid fa-chevron-right" style="font-size:.7rem;color:var(--gold);margin-right:.4rem;"></i>Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 – WhatsApp & Social -->
+      <div class="footer-col">
+        <h4>Connect With Us</h4>
+        <p>Need help right now? Reach us on WhatsApp for instant answers and consultations.</p>
+        <a href="https://wa.me/+919867784642/?text=Please%20Help%20To%20Me"
+           target="_blank" rel="noopener"
+           class="btn-whatsapp"
+           style="margin-top:.5rem;display:inline-flex;align-items:center;gap:.5rem;"
+           aria-label="Chat on WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Now
+        </a>
+      </div>
     </div>
+  </div>
 
-    <!-- Testimonials -->
-    <section class="p-5">
-        <h3 class="text-2xl font-bold mb-4">What Our Clients Say</h3>
-        <div>Testimonials from clients...</div>
-    </section>
+  <div class="footer-bottom">
+    <p>&copy; <span id="footerYear"></span> <span>Maa Katyani Jyotish</span>. All rights reserved.</p>
+  </div>
+</footer>
 
-    <!-- Footer -->
-    <footer class="p-5 bg-gray-800 text-white text-center">
-        <p>Contact Us: +91-9867784642 | Email: info@maakatyani.com</p>
-    </footer>
+<!-- ============================================================
+     14. FLOATING BUTTONS
+============================================================ -->
+<!-- Red call button – bottom-left -->
+<a href="tel:+919867784642"
+   class="floating-call"
+   aria-label="Call Maa Katyani Jyotish">
+  <i class="fa-solid fa-phone"></i>
+</a>
 
-    <!-- Floating Call/WhatsApp Buttons -->
-    <a href="tel:+919867784642" class="fixed right-5 bottom-20 p-3 bg-[#d30000] text-white rounded-full">Call</a>
-    <a href="https://wa.me/+919867784642/?text=Please Help To Me" class="fixed right-5 bottom-10 p-3 bg-[#ffab00] text-white rounded-full">WhatsApp</a>
+<!-- Green WhatsApp button – bottom-right -->
+<a href="https://wa.me/+919867784642/?text=Please%20Help%20To%20Me"
+   target="_blank" rel="noopener"
+   class="floating-whatsapp"
+   aria-label="WhatsApp Maa Katyani Jyotish">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
-    <script>
-        $(document).ready(function() {
-            AOS.init();
-        });
-    </script>
+<!-- Scroll-to-top -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- ============================================================
+     SCRIPTS  (vanilla JS only – no external JS CDN dependencies)
+============================================================ -->
+<script src="script.js"></script>
+<script>
+  // Set footer year
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

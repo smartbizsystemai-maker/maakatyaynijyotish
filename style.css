@@ -1,0 +1,250 @@
+/* =========================================
+   Maa Katyani Jyotish – style.css
+   Modern CSS (Grid / Flexbox, no Bootstrap)
+   ========================================= */
+
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Livvic:wght@300;400;500;600;700&display=swap');
+
+/* ---------- CSS Variables (Brand Colors) ---------- */
+:root {
+  --primary:   #c21e56;
+  --gold:      #f7cd36;
+  --dark-red:  #d30000;
+  --amber:     #ffab00;
+  --dark:      #1a1a2e;
+  --light:     #fff8f0;
+  --white:     #ffffff;
+  --gray-100:  #f5f5f5;
+  --gray-200:  #e0e0e0;
+  --gray-700:  #444444;
+  --gray-800:  #222222;
+  --font-head: 'Oswald', sans-serif;
+  --font-body: 'Livvic', sans-serif;
+  --shadow:    0 4px 20px rgba(0,0,0,.12);
+  --radius:    10px;
+  --transition: .3s ease;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--font-body); color: var(--gray-700); background: var(--white); line-height: 1.7; overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ---------- Utility ---------- */
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.section-title { font-family: var(--font-head); font-size: clamp(1.6rem, 4vw, 2.4rem); color: var(--primary); text-align: center; margin-bottom: .5rem; text-transform: uppercase; letter-spacing: 1px; }
+.section-subtitle { text-align: center; color: var(--gray-700); font-size: 1rem; margin-bottom: 2.5rem; }
+.section-title span { color: var(--gold); }
+.btn-primary { display: inline-block; background: var(--primary); color: var(--white); font-family: var(--font-head); font-size: 1rem; padding: .7rem 1.8rem; border-radius: 30px; letter-spacing: .5px; transition: background var(--transition), transform var(--transition), box-shadow var(--transition); }
+.btn-primary:hover { background: var(--dark-red); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(194,30,86,.35); }
+.btn-whatsapp { display: inline-block; background: #25d366; color: var(--white); font-family: var(--font-head); font-size: 1rem; padding: .7rem 1.8rem; border-radius: 30px; transition: background var(--transition), transform var(--transition); }
+.btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
+
+/* ==========================================
+   1. TICKER BAR
+   ========================================== */
+.ticker-bar { background: var(--dark); color: var(--gold); font-family: var(--font-head); font-size: .9rem; padding: .45rem 0; overflow: hidden; white-space: nowrap; }
+.ticker-inner { display: inline-flex; animation: tickerScroll 28s linear infinite; }
+.ticker-inner span { padding-right: 80px; }
+.ticker-inner a { color: var(--amber); font-weight: 700; }
+.ticker-inner a:hover { color: var(--gold); }
+@keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ==========================================
+   2. HEADER
+   ========================================== */
+.site-header { position: sticky; top: 0; z-index: 900; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,.1); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: .7rem 0; gap: 1rem; }
+.header-logos { display: flex; align-items: center; gap: .75rem; }
+.header-logos img { height: 60px; width: auto; object-fit: contain; }
+.header-brand { font-family: var(--font-head); font-size: 1.4rem; color: var(--primary); text-align: center; flex: 1; }
+.header-brand span { color: var(--gold); display: block; font-size: .85rem; font-family: var(--font-body); font-weight: 500; }
+
+/* Nav */
+.main-nav ul { display: flex; gap: 1.5rem; align-items: center; }
+.main-nav a { font-family: var(--font-head); font-size: .95rem; color: var(--gray-800); text-transform: uppercase; letter-spacing: .5px; padding: .3rem 0; border-bottom: 2px solid transparent; transition: color var(--transition), border-color var(--transition); }
+.main-nav a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+
+/* Hamburger */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: .3rem; }
+.hamburger span { width: 26px; height: 2px; background: var(--gray-800); border-radius: 2px; transition: all var(--transition); }
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile nav */
+.mobile-nav { display: none; background: var(--white); border-top: 2px solid var(--primary); padding: 1rem 0; }
+.mobile-nav.open { display: block; }
+.mobile-nav ul { display: flex; flex-direction: column; gap: .5rem; padding: 0 5%; }
+.mobile-nav a { font-family: var(--font-head); font-size: 1rem; color: var(--gray-800); text-transform: uppercase; padding: .5rem 0; border-bottom: 1px solid var(--gray-200); display: block; }
+.mobile-nav a:hover { color: var(--primary); }
+
+/* ==========================================
+   3. MARQUEE / SERVICE TICKER
+   ========================================== */
+.marquee-bar { background: linear-gradient(135deg, var(--primary), var(--dark-red)); color: var(--white); padding: .7rem 0; overflow: hidden; }
+.marquee-track { display: inline-flex; animation: marqueeScroll 35s linear infinite; white-space: nowrap; }
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-item { display: inline-flex; align-items: center; gap: .5rem; padding-right: 60px; font-family: var(--font-head); font-size: .95rem; letter-spacing: .3px; }
+.marquee-item i { color: var(--gold); }
+.marquee-cta { font-weight: 700; color: var(--gold); }
+@keyframes marqueeScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ==========================================
+   4. BANNER SECTIONS
+   ========================================== */
+.banner-section { position: relative; overflow: hidden; }
+.banner-section a { display: block; }
+.banner-section img { width: 100%; max-height: 520px; object-fit: cover; object-position: center top; transition: transform .6s ease; }
+.banner-section:hover img { transform: scale(1.02); }
+.banner-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.25); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity var(--transition); }
+.banner-section:hover .banner-overlay { opacity: 1; }
+.banner-overlay .btn-whatsapp { font-size: 1.1rem; padding: .9rem 2.2rem; }
+
+/* ==========================================
+   5. SERVICES GRID
+   ========================================== */
+.services-section { padding: 4.5rem 0; background: var(--gray-100); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+.service-card { background: var(--white); border-radius: var(--radius); padding: 2rem 1.2rem; text-align: center; box-shadow: var(--shadow); transition: transform var(--transition), box-shadow var(--transition); cursor: default; }
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(194,30,86,.2); }
+.service-card img { width: 80px; height: 80px; object-fit: contain; margin: 0 auto 1rem; }
+.service-card h3 { font-family: var(--font-head); font-size: 1.05rem; color: var(--primary); text-transform: uppercase; line-height: 1.3; }
+
+/* ==========================================
+   7. ABOUT SECTION
+   ========================================== */
+.about-section { padding: 5rem 0; background: var(--white); }
+.about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.about-text h2 { font-family: var(--font-head); font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: var(--primary); text-transform: uppercase; margin-bottom: 1rem; }
+.about-text h2 span { color: var(--gold); }
+.about-text p { margin-bottom: 1rem; font-size: 1rem; color: var(--gray-700); }
+.about-text ul { margin: 1rem 0 1.5rem; }
+.about-text ul li { display: flex; align-items: flex-start; gap: .5rem; margin-bottom: .6rem; font-size: .95rem; }
+.about-text ul li::before { content: '✦'; color: var(--gold); flex-shrink: 0; margin-top: .1rem; }
+.about-image-wrap { position: relative; display: flex; align-items: center; justify-content: center; }
+.about-ring { position: absolute; width: 340px; height: 340px; border-radius: 50%; animation: rotateSpin 12s linear infinite; }
+.about-god { position: relative; z-index: 2; width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 4px solid var(--gold); box-shadow: 0 0 40px rgba(247,205,54,.4); }
+@keyframes rotateSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* ==========================================
+   8. POPULAR SERVICES
+   ========================================== */
+.popular-section { padding: 4.5rem 0; background: var(--light); }
+.popular-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.popular-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--white); transition: transform var(--transition); }
+.popular-card:hover { transform: translateY(-6px); }
+.popular-card .card-img-wrap { overflow: hidden; height: 210px; }
+.popular-card .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.popular-card:hover .card-img-wrap img { transform: scale(1.06); }
+.popular-card .card-body { padding: 1rem 1.2rem 1.4rem; text-align: center; }
+.popular-card h3 { font-family: var(--font-head); font-size: 1rem; color: var(--primary); text-transform: uppercase; margin-bottom: .5rem; }
+.popular-card p { font-size: .88rem; color: var(--gray-700); }
+
+/* ==========================================
+   10. WHY CHOOSE US
+   ========================================== */
+.why-section { padding: 5rem 0; background: var(--dark); color: var(--white); }
+.why-inner { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: start; }
+.why-text h2 { font-family: var(--font-head); font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: var(--gold); text-transform: uppercase; margin-bottom: 1rem; }
+.why-text h2 span { color: var(--primary); }
+.why-text p { font-size: 1rem; color: rgba(255,255,255,.82); margin-bottom: 1rem; }
+.why-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
+.why-feature { display: flex; gap: .8rem; align-items: flex-start; background: rgba(255,255,255,.06); border-radius: var(--radius); padding: 1rem; }
+.why-feature img { width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; }
+.why-feature h4 { font-family: var(--font-head); font-size: .95rem; color: var(--gold); text-transform: uppercase; margin-bottom: .25rem; }
+.why-feature p { font-size: .85rem; color: rgba(255,255,255,.7); }
+.contact-box { background: var(--primary); border-radius: var(--radius); padding: 2rem; text-align: center; }
+.contact-box h3 { font-family: var(--font-head); font-size: 1.3rem; color: var(--white); text-transform: uppercase; margin-bottom: 1rem; }
+.contact-box .phone-num { font-family: var(--font-head); font-size: 1.8rem; color: var(--gold); display: block; margin-bottom: 1.2rem; letter-spacing: 1px; }
+.contact-box .phone-num:hover { color: var(--white); }
+.contact-box p { font-size: .9rem; color: rgba(255,255,255,.8); margin-bottom: 1.2rem; }
+
+/* ==========================================
+   11. MAIN SERVICES
+   ========================================== */
+.main-services-section { padding: 4.5rem 0; background: var(--gray-100); }
+.main-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; }
+.main-service-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--white); }
+.main-service-card .card-img { height: 240px; overflow: hidden; }
+.main-service-card .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.main-service-card:hover .card-img img { transform: scale(1.06); }
+.main-service-card .card-content { padding: 1.4rem; }
+.main-service-card h3 { font-family: var(--font-head); font-size: 1.15rem; color: var(--primary); text-transform: uppercase; margin-bottom: .5rem; }
+.main-service-card p { font-size: .9rem; color: var(--gray-700); margin-bottom: 1rem; }
+
+/* ==========================================
+   12. TESTIMONIALS
+   ========================================== */
+.testimonials-section { padding: 4.5rem 0; background: var(--white); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; }
+.testimonial-card { background: var(--light); border-radius: var(--radius); padding: 2rem; text-align: center; box-shadow: var(--shadow); border-top: 4px solid var(--primary); }
+.testimonial-card .client-img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; border: 3px solid var(--gold); }
+.testimonial-card .stars { color: var(--amber); font-size: 1.1rem; margin-bottom: .8rem; letter-spacing: 2px; }
+.testimonial-card blockquote { font-size: .92rem; color: var(--gray-700); font-style: italic; margin-bottom: 1rem; }
+.testimonial-card cite { font-family: var(--font-head); font-size: .9rem; color: var(--primary); text-transform: uppercase; }
+
+/* ==========================================
+   13. FOOTER
+   ========================================== */
+.site-footer { background: var(--dark); color: rgba(255,255,255,.8); padding: 3.5rem 0 0; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; padding-bottom: 2.5rem; }
+.footer-col h4 { font-family: var(--font-head); font-size: 1.1rem; color: var(--gold); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--primary); }
+.footer-col p { font-size: .9rem; margin-bottom: .5rem; }
+.footer-col a { color: rgba(255,255,255,.8); transition: color var(--transition); }
+.footer-col a:hover { color: var(--gold); }
+.footer-col .footer-phone { font-family: var(--font-head); font-size: 1.2rem; color: var(--amber); display: block; margin-bottom: .5rem; }
+.footer-col .footer-phone:hover { color: var(--gold); }
+.footer-bottom { background: rgba(0,0,0,.3); text-align: center; padding: 1rem 0; font-size: .85rem; color: rgba(255,255,255,.5); }
+.footer-bottom span { color: var(--gold); font-weight: 600; }
+
+/* ==========================================
+   14. FLOATING BUTTONS
+   ========================================== */
+.floating-call { position: fixed; bottom: 80px; left: 20px; z-index: 1000; background: var(--dark-red); color: var(--white); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 4px 14px rgba(211,0,0,.5); transition: transform var(--transition), box-shadow var(--transition); animation: pulseRed 2.5s infinite; }
+.floating-call:hover { transform: scale(1.12); box-shadow: 0 6px 20px rgba(211,0,0,.6); animation: none; }
+.floating-whatsapp { position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: #25d366; color: var(--white); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 14px rgba(37,211,102,.5); transition: transform var(--transition), box-shadow var(--transition); animation: pulseGreen 2.5s infinite .5s; }
+.floating-whatsapp:hover { transform: scale(1.12); box-shadow: 0 6px 20px rgba(37,211,102,.6); animation: none; }
+@keyframes pulseRed { 0%,100% { box-shadow: 0 0 0 0 rgba(211,0,0,.4); } 50% { box-shadow: 0 0 0 10px rgba(211,0,0,0); } }
+@keyframes pulseGreen { 0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,.4); } 50% { box-shadow: 0 0 0 10px rgba(37,211,102,0); } }
+
+/* ==========================================
+   SCROLL-TO-TOP
+   ========================================== */
+.scroll-top { position: fixed; bottom: 80px; right: 20px; z-index: 1000; background: var(--primary); color: var(--white); width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; cursor: pointer; border: none; opacity: 0; pointer-events: none; transition: opacity var(--transition), transform var(--transition); box-shadow: 0 3px 10px rgba(0,0,0,.25); }
+.scroll-top.visible { opacity: 1; pointer-events: auto; }
+.scroll-top:hover { transform: translateY(-3px); background: var(--dark-red); }
+
+/* ==========================================
+   RESPONSIVE – max-width: 900px
+   ========================================== */
+@media (max-width: 900px) {
+  .about-inner, .why-inner { grid-template-columns: 1fr; }
+  .about-image-wrap { order: -1; margin-bottom: 1rem; }
+  .about-ring { width: 260px; height: 260px; }
+  .about-god { width: 220px; height: 220px; }
+  .why-features { grid-template-columns: 1fr 1fr; }
+  .main-nav { display: none; }
+  .hamburger { display: flex; }
+}
+
+@media (max-width: 600px) {
+  .header-logos img { height: 44px; }
+  .header-brand { font-size: 1.1rem; }
+  .why-features { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-ring { width: 220px; height: 220px; }
+  .about-god { width: 180px; height: 180px; }
+  .floating-call { bottom: 90px; left: 14px; width: 50px; height: 50px; font-size: 1.2rem; }
+  .floating-whatsapp { bottom: 20px; right: 14px; width: 50px; height: 50px; font-size: 1.3rem; }
+}
+
+/* ==========================================
+   SCROLL ANIMATION OVERRIDES
+   (data-aos handled by IntersectionObserver in script.js)
+   ========================================== */
+[data-aos] { will-change: transform, opacity; }
