@@ -171,7 +171,9 @@ ul { list-style: none; }
 .main-services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; }
 .main-service-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--white); }
 .main-service-card .card-img { height: 240px; overflow: hidden; }
-.main-service-card .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.main-service-card .card-img img,
+.main-service-card .card-img .service-img-placeholder { width: 100%; height: 100%; }
+.main-service-card .card-img img { object-fit: cover; transition: transform .5s ease; }
 .main-service-card:hover .card-img img { transform: scale(1.06); }
 .main-service-card .card-content { padding: 1.4rem; }
 .main-service-card h3 { font-family: var(--font-head); font-size: 1.15rem; color: var(--primary); text-transform: uppercase; margin-bottom: .5rem; }
@@ -225,23 +227,202 @@ ul { list-style: none; }
 @media (max-width: 900px) {
   .about-inner, .why-inner { grid-template-columns: 1fr; }
   .about-image-wrap { order: -1; margin-bottom: 1rem; }
-  .about-ring { width: 260px; height: 260px; }
-  .about-god { width: 220px; height: 220px; }
+  .about-mandala { width: 260px; height: 260px; }
+  .ring-1 { width: 260px; height: 260px; }
+  .ring-2 { width: 210px; height: 210px; }
+  .ring-3 { width: 165px; height: 165px; }
+  .mandala-center { width: 120px; height: 120px; font-size: 3.8rem; }
   .why-features { grid-template-columns: 1fr 1fr; }
   .main-nav { display: none; }
   .hamburger { display: flex; }
+  .banner-cta-inner { text-align: center; justify-content: center; }
 }
 
 @media (max-width: 600px) {
-  .header-logos img { height: 44px; }
+  .header-logos { gap: .5rem; }
+  .logo-badge { width: 48px; height: 48px; font-size: 1.2rem; }
+  .logo-badge--main { width: 58px; height: 58px; font-size: 1.5rem; }
   .header-brand { font-size: 1.1rem; }
   .why-features { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .about-ring { width: 220px; height: 220px; }
-  .about-god { width: 180px; height: 180px; }
+  .about-mandala { width: 220px; height: 220px; }
+  .ring-1 { width: 220px; height: 220px; }
+  .ring-2 { width: 178px; height: 178px; }
+  .ring-3 { width: 140px; height: 140px; }
+  .mandala-center { width: 100px; height: 100px; font-size: 3rem; }
   .floating-call { bottom: 90px; left: 14px; width: 50px; height: 50px; font-size: 1.2rem; }
   .floating-whatsapp { bottom: 20px; right: 14px; width: 50px; height: 50px; font-size: 1.3rem; }
 }
+
+/* ==========================================
+   LOGO BADGES (header – replaces logo images)
+   ========================================== */
+.logo-badge {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--dark-red));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; color: var(--gold);
+  box-shadow: 0 3px 12px rgba(194,30,86,.35);
+  flex-shrink: 0;
+}
+.logo-badge--main {
+  width: 72px; height: 72px; font-size: 1.9rem;
+  background: linear-gradient(135deg, var(--dark), var(--primary));
+  box-shadow: 0 4px 18px rgba(194,30,86,.45);
+}
+
+/* ==========================================
+   HERO BANNER (replaces banner1.png)
+   ========================================== */
+.banner-hero {
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, #1a1a2e 0%, var(--primary) 45%, var(--dark-red) 75%, #1a1a2e 100%);
+  min-height: 480px; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 4rem 1rem;
+}
+.banner-hero::before {
+  content: '🕉'; position: absolute; font-size: 480px; line-height: 1;
+  opacity: .04; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  pointer-events: none; user-select: none;
+}
+.banner-hero-content { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+.hero-subtitle { font-family: var(--font-head); font-size: 1rem; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: .8rem; }
+.banner-hero-content h1 {
+  font-family: var(--font-head); font-size: clamp(2rem, 5.5vw, 3.6rem);
+  color: var(--white); text-transform: uppercase; letter-spacing: 2px;
+  line-height: 1.15; margin-bottom: 1rem;
+  text-shadow: 0 2px 24px rgba(0,0,0,.5);
+}
+.hero-desc { font-size: clamp(.95rem, 2.2vw, 1.2rem); color: rgba(255,255,255,.88); margin-bottom: 2rem; }
+.banner-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.hero-icons {
+  position: absolute; bottom: 1.5rem; right: 2rem; display: flex; gap: 1.2rem;
+  font-size: 1.5rem; color: rgba(255,255,255,.12); pointer-events: none;
+}
+
+/* ==========================================
+   SERVICE ICON (replaces service card images)
+   ========================================== */
+.service-icon {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--dark-red));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; color: var(--gold);
+  margin: 0 auto 1rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 14px rgba(194,30,86,.3);
+}
+.service-card:hover .service-icon { transform: scale(1.1) rotate(8deg); box-shadow: 0 8px 22px rgba(194,30,86,.45); }
+
+/* ==========================================
+   BANNER DIVIDER (replaces banner2.png)
+   ========================================== */
+.banner-divider {
+  background: linear-gradient(135deg, var(--primary), var(--dark-red));
+  padding: 4rem 0; text-align: center; color: var(--white);
+}
+.banner-divider-icon { font-size: 3rem; color: var(--gold); display: block; margin-bottom: 1rem; opacity: .9; }
+.banner-divider-inner h2 {
+  font-family: var(--font-head); font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: .5rem;
+}
+.banner-divider-inner p { font-size: 1rem; color: rgba(255,255,255,.85); margin-bottom: 1.5rem; }
+
+/* ==========================================
+   CSS MANDALA (replaces about images)
+   ========================================== */
+.about-mandala {
+  position: relative; width: 340px; height: 340px;
+  display: flex; align-items: center; justify-content: center;
+}
+.mandala-ring {
+  position: absolute; border-radius: 50%; border-color: var(--gold); border-style: solid;
+}
+.ring-1 { width: 340px; height: 340px; border-width: 2px; border-style: dashed; animation: rotateSpin 18s linear infinite; opacity: .6; }
+.ring-2 { width: 275px; height: 275px; border-width: 3px; animation: rotateSpin 11s linear infinite reverse; opacity: .75; }
+.ring-3 { width: 215px; height: 215px; border-width: 2px; border-style: dotted; animation: rotateSpin 7s linear infinite; opacity: .65; }
+.mandala-center {
+  position: relative; z-index: 5;
+  width: 160px; height: 160px;
+  background: linear-gradient(135deg, var(--primary), var(--dark-red));
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 5rem; color: var(--gold);
+  border: 4px solid var(--gold);
+  box-shadow: 0 0 50px rgba(247,205,54,.35), 0 0 0 8px rgba(247,205,54,.1);
+}
+
+/* ==========================================
+   CARD IMAGE PLACEHOLDERS (popular cards)
+   ========================================== */
+.card-img-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem; color: rgba(255,255,255,.9);
+  transition: transform .5s ease;
+}
+.popular-card:hover .card-img-placeholder { transform: scale(1.08); }
+.cip-1 { background: linear-gradient(135deg, #1a3a5c, #2980b9); }
+.cip-2 { background: linear-gradient(135deg, var(--primary), #7b1041); }
+.cip-3 { background: linear-gradient(135deg, #2c3e50, var(--primary)); }
+.cip-4 { background: linear-gradient(135deg, #6d1a36, var(--dark-red)); }
+
+/* ==========================================
+   BANNER CTA SECTION (replaces banner3.png)
+   ========================================== */
+.banner-cta-section {
+  background: linear-gradient(135deg, var(--dark) 0%, #2d1b4e 50%, var(--dark) 100%);
+  padding: 4rem 0;
+}
+.banner-cta-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.banner-cta-text h2 {
+  font-family: var(--font-head); font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: .4rem;
+}
+.banner-cta-text p { color: rgba(255,255,255,.8); font-size: .98rem; }
+.banner-cta-btns { display: flex; gap: 1rem; flex-wrap: wrap; flex-shrink: 0; }
+
+/* ==========================================
+   WHY-US ICON (replaces why-us feature images)
+   ========================================== */
+.why-icon {
+  width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--primary), var(--dark-red));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; color: var(--gold);
+  box-shadow: 0 3px 12px rgba(194,30,86,.4);
+}
+
+/* ==========================================
+   SERVICE IMG PLACEHOLDERS (main service cards)
+   ========================================== */
+.service-img-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 5rem; color: rgba(255,255,255,.85);
+  transition: transform .5s ease;
+}
+.main-service-card:hover .service-img-placeholder { transform: scale(1.06); }
+.sip-1 { background: linear-gradient(135deg, #6d1a36, var(--dark-red)); }
+.sip-2 { background: linear-gradient(135deg, var(--primary), #7b1041); }
+.sip-3 { background: linear-gradient(135deg, #2c1654, var(--primary)); }
+
+/* ==========================================
+   CLIENT AVATAR (replaces testimonial photos)
+   ========================================== */
+.client-avatar {
+  width: 90px; height: 90px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--dark-red));
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-size: 1.8rem; color: var(--white);
+  letter-spacing: 1px; margin: 0 auto 1rem;
+  border: 3px solid var(--gold);
+  box-shadow: 0 4px 14px rgba(194,30,86,.35);
+}
+
+
 
 /* ==========================================
    SCROLL ANIMATION OVERRIDES
